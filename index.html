@@ -1101,55 +1101,128 @@
         }
         .hero {
           padding: 0 20px;
-          height: 80vh;
+          height: 85vh;
         }
         .hero-title {
-          font-size: 4.5rem;
-          line-height: 1;
+          font-size: 3.5rem;
+          line-height: 1.1;
+          margin-bottom: 10px;
+        } /* Diperkecil sedikit agar aman di HP kecil */
+        .hero-desc {
+          font-size: 1rem;
+          margin-bottom: 20px;
+          line-height: 1.4;
         }
         .btn {
           font-size: 1rem;
           padding: 10px 15px;
-        }
+          width: 100%;
+          justify-content: center;
+        } /* Tombol jadi full width di HP */
+        .btn-group {
+          flex-direction: column;
+          gap: 10px;
+          width: 100%;
+        } /* Tombol atas bawah agar tidak tabrakan */
+
         .row {
           padding: 10px 20px;
+        }
+        .row-title {
+          font-size: 1.3rem;
         }
         .slider-btn {
           display: none;
         }
+
         .stats-container {
           padding: 10px 20px;
+          gap: 10px;
         }
         .stat-box {
-          min-width: 140px;
+          min-width: 45%;
           padding: 10px;
-        }
+          flex: 1;
+        } /* 2 Kolom di HP */
         .stat-num {
           font-size: 1.8rem;
         }
+
         .card {
-          min-width: 200px;
-          height: 120px;
+          min-width: 220px;
+          height: 130px;
         }
         .video-card {
           min-width: 280px;
           height: 160px;
         }
+
         .wishlist-hero h1,
         .games-hero h1 {
-          font-size: 4rem;
+          font-size: 3.5rem;
+          line-height: 1;
         }
         .wish-card {
           width: 100%;
           height: 250px;
         }
         .game-card {
-          width: 150px;
+          width: 45%;
+          height: 180px;
+          flex: 1;
+          min-width: 140px;
+        } /* 2 Kolom game di HP */
+        .game-info h3 {
+          font-size: 1rem;
+        }
+
+        .profile-img {
+          width: 120px;
+          height: 120px;
+        }
+        .profile-title {
+          font-size: 2rem;
+        }
+        .profiles-container {
+          gap: 20px;
+        }
+
+        .pin-pad {
+          gap: 15px;
+          max-width: 260px;
+        }
+        .pin-btn {
+          width: 60px;
+          height: 60px;
+          font-size: 1.5rem;
+        }
+
+        .modal-overlay {
+          padding: 10px;
+        }
+        .modal-content {
+          max-height: 85vh;
+        }
+        .modal-hero {
           height: 200px;
         }
-        .game-info h3 {
-          font-size: 1.2rem;
+        #letter-modal .modal-hero {
+          height: 150px;
         }
+        .modal-body {
+          padding: 20px 15px;
+        }
+        .modal-title {
+          font-size: 2rem;
+          line-height: 1;
+        }
+        .modal-desc {
+          font-size: 1rem;
+        }
+        #letter-modal .modal-title {
+          font-size: 2rem;
+        }
+
         .wa-btn {
           left: 20px;
           bottom: 85px;
@@ -1157,6 +1230,51 @@
           height: 50px;
           font-size: 1.5rem;
         }
+        .audio-btn {
+          bottom: 20px;
+          right: 20px;
+          width: 45px;
+          height: 45px;
+          font-size: 1.2rem;
+        }
+
+        /* Game Responsiveness for Mobile */
+        .game-title {
+          font-size: 2.5rem;
+        }
+        .game-box {
+          padding: 20px 15px;
+        }
+        #memory-board {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 5px;
+        }
+        .memory-card {
+          width: 65px !important;
+          height: 65px !important;
+        }
+        .memory-card .front-face {
+          font-size: 1.5rem;
+        }
+        .letter-box {
+          width: 35px !important;
+          height: 45px !important;
+          font-size: 1.5rem !important;
+        }
+      }
+
+      /* Tambahan ekstra untuk HP yang layarnya sangat kecil (iPhone SE / Galaxy lawas) */
+      @media (max-width: 400px) {
+        .btn-group {
+          flex-direction: column;
+        }
+        .stat-box {
+          min-width: 100%;
+        } /* Stats jadi 1 kolom ke bawah */
+        .game-card {
+          width: 100%;
+          height: 200px;
+        } /* Game jadi 1 kolom */
       }
     </style>
   </head>
@@ -1716,22 +1834,32 @@
           "
         >
           <div class="wish-card">
-            <span class="wish-tag">Dream</span><img src="foto vertikal\062227AD-8582-4CF1-B137-E623E53557AB.jpg" />
+            <span class="wish-tag">Dream</span
+            ><img
+              src="foto vertikal\062227AD-8582-4CF1-B137-E623E53557AB.jpg"
+            />
             <div class="wish-title">1. Trip Keluar Negeri</div>
           </div>
           <div class="wish-card">
             <span class="wish-tag">Upcoming</span
-            ><img src="foto vertikal\CA6CE5A3-C256-4202-84B8-5C8DE6481B8F.jpg" />
+            ><img
+              src="foto vertikal\CA6CE5A3-C256-4202-84B8-5C8DE6481B8F.jpg"
+            />
             <div class="wish-title">2. Trip Dalam Negeri Juga</div>
           </div>
           <div class="wish-card">
             <span class="wish-tag" style="background: #54b9c5"
               >In Production</span
-            ><img src="foto vertikal\CB984AC0-4BC6-430C-AE93-02BCF2D35175.jpg" />
+            ><img
+              src="foto vertikal\CB984AC0-4BC6-430C-AE93-02BCF2D35175.jpg"
+            />
             <div class="wish-title">3. Beli Rumah Impian</div>
           </div>
           <div class="wish-card">
-            <span class="wish-tag">Dream</span><img src="foto vertikal\CBD4B26D-4D4D-469F-B7E1-A05BC43CD667.jpg" />
+            <span class="wish-tag">Dream</span
+            ><img
+              src="foto vertikal\CBD4B26D-4D4D-469F-B7E1-A05BC43CD667.jpg"
+            />
             <div class="wish-title">4. Pelihara Kucing Lucu</div>
           </div>
           <div class="wish-card">
@@ -1740,11 +1868,13 @@
             <div class="wish-title">5. Roadtrip Berdua</div>
           </div>
           <div class="wish-card">
-            <span class="wish-tag">Dream</span><img src="foto vertikal\IMG_1551.jpg" />
+            <span class="wish-tag">Dream</span
+            ><img src="foto vertikal\IMG_1551.jpg" />
             <div class="wish-title">6. Fine Dining Mewah</div>
           </div>
           <div class="wish-card">
-            <span class="wish-tag">Goal</span><img src="foto vertikal\IMG_2697.jpg" />
+            <span class="wish-tag">Goal</span
+            ><img src="foto vertikal\IMG_2697.jpg" />
             <div class="wish-title">7. Bikin Bisnis Bareng</div>
           </div>
           <div class="wish-card">
